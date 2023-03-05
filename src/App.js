@@ -44,25 +44,53 @@ function App() {
   return (
     <div>
       {products.map((product) => (
-        <div className="container" key={product?.QuestionID}>
+        <div className="content" key={product?.QuestionID}>
+          {/*  the header part  start*/}
           <div className="header">
             <h1> {product.ChapterID}</h1>
           </div>
+
+          {/*  timer difficulty level starts here*/}
           <div className="box">
-            <h3 className="Category">
-              Difficulty Level : {product.Difficulty}
-            </h3>
+            <h3 className="Category">Difficulty : {product.Difficulty}</h3>
             <h3 className="box2" style={{ color: "blue" }}>
               {" "}
               Expected Time : {product.ExpectedTime}
             </h3>
-            <h3 className="box1"> Timer (Seconds) : {product.Step1Timer}</h3>
+            <h3 className="box1"> Timer : {product.Step1Timer}</h3>
           </div>
+
+          {/*  the question part  start*/}
           <p className="question">
             <MathJax>{product.Question}</MathJax>
           </p>
         </div>
       ))}
+      {/* answer starts  */}
+
+      <label class="container">
+        None of these
+        <input type="radio" name="radio" checked />
+        <span class="check"></span>
+      </label>
+      <label class="container">
+        All of these
+        <input type="radio" name="radio" />
+        <span class="check"></span>
+      </label>
+      <label class="container">
+        Both
+        <input type="radio" name="radio" />
+        <span class="check"></span>
+      </label>
+      <label class="container">
+        Option
+        <input type="radio" name="radio" />
+        <span class="check"></span>
+      </label>
+
+      <hr />
+      {/*  the buttons part  start you can navigate between the questions*/}
       <div className="change">
         {currentQuestionIndex !== 0 && (
           <button className="btn1" onClick={handlePreviousQuestion}>
