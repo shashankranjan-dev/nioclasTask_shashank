@@ -1,3 +1,7 @@
+* {
+  overflow: hidden;
+}
+
 .content {
   display: flex;
   flex-direction: column;
@@ -128,7 +132,7 @@
   }
 
   .box1 {
-    font-size: 12px;
+    font-size: 12 px;
   }
 }
 
