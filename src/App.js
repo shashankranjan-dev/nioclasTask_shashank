@@ -69,8 +69,8 @@ function App() {
       {/* answer starts  */}
 
       <label class="container">
-        None of these
-        <input type="radio" name="radio" checked />
+        These are dummy answer options to make the UI look good
+        <input type="radio" name="radio" />
         <span class="check"></span>
       </label>
       <label class="container">
