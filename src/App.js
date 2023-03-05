@@ -43,7 +43,7 @@ function App() {
 
   return (
     <div>
-      {products.map((product) => (
+      {products.map((product, index) => (
         <div className="content" key={product?.QuestionID}>
           {/*  the header part  start*/}
           <div className="header">
@@ -62,7 +62,7 @@ function App() {
 
           {/*  the question part  start*/}
           <p className="question">
-            <MathJax>{product.Question}</MathJax>
+            <MathJax> {product.Question}</MathJax>
           </p>
         </div>
       ))}
@@ -91,12 +91,14 @@ function App() {
 
       <hr />
       {/*  the buttons part  start you can navigate between the questions*/}
+
       <div className="change">
         {currentQuestionIndex !== 0 && (
           <button className="btn1" onClick={handlePreviousQuestion}>
             {"<<"} Previous
           </button>
         )}
+
         {currentQuestionIndex !== questions.length - 1 && (
           <button className="btn2" onClick={handleNextQuestion}>
             Next {">>"}
